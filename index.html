@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+/<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
@@ -76,10 +76,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We introduce a pose estimate approach to establish 6D pose of the objects with accurate bounding boxs and text lables, and it simultenouly build precise and robust pose 
-            estimate of multiple objects and has the capability of real-time tracking these poses. We use a visual servosing system to allow robots to measure object's pose in real- 
-            time and dynamically plan robot arm trajectory of approching the target. The developed approach can be seamlessly connected with LLMs, where natural lanuage instructions 
-            such as 'please grasp mayo', and then the robot can understand such instructions to grasp the object.
+            We present a novel pose estimation approach aimed at determining the 6D pose of objects with precision, including accurate bounding boxes and textual labels. This method concurrently establishes precise and robust pose estimates for multiple objects while enabling real-time tracking of these poses. Leveraging a visual servoing system, our approach empowers robots to promptly measure and track object poses in real-time, facilitating dynamic planning of robot arm trajectories to approach targets. Moreover, our developed methodology seamlessly integrates with Language Understanding Models (LLMs), allowing for intuitive natural language instructions such as 'please grasp the mayo.' Consequently, the robot comprehends and executes such instructions to manipulate objects effectively.
           </p>
         </div>
       </div>
@@ -139,7 +136,7 @@
         <h3 class="title is-4">6D pose supported robot grasping</h3>
         <div class="content has-text-justified">
           <p>
-            We established 6D pose estimate of multiple known objects in a scene with a set of input images, and text label and bounding box of the object is created. Using pre-trained model of pose estimation, RGB-D images are collected via a hand-on calibrated Azure camera and fed into build 6D pose information. As shown in the left-side,  text-based instruction such as 'pick mayo' instructes the robot to grapsing the object of 'mayo', and then 'place mayo in the box marked in blue' controls the robot to accurately place the object at the target. The right one is another example of robot skill in performing picking-and-placing operation.
+            We achieved the 6D pose estimation of multiple known objects within a scene using a series of input images, generating corresponding text labels and bounding boxes for each object. Employing a pre-trained pose estimation model, RGB-D images captured by a meticulously calibrated Azure camera are utilized to construct precise 6D pose information. As illustrated on the left, text-based instructions such as 'pick up the mayo' direct the robot to grasp the specified 'mayo' object, followed by 'place the mayo in the blue-marked box,' guiding the robot to accurately position the object at the designated target. On the right, another instance showcases the robot's proficiency in executing picking-and-placing operations
           </p>
         </div>
         <div class="columns is-centered">
@@ -194,7 +191,7 @@
         <h3 class="title is-4">LLM-driven general-purpose object manipulation</h3>
         <div class="content has-text-justified">
           <p>
-           When multiple same objects appear in a scene, and impilcit instructions such as pick-and-place 'mayo' often confuse the robot which one should be handled if there is no rules or manipultion policy. Here, we used a LLM model to give a specific text-based instruction to control the robot to perform the picking the correct one. Specifically, an input image of the scene is fed into the LLM to describe such a scene and objects, and the number of the object is counted. A natural language instruction 'please pick mayo in the middle' is used to instrcuted the robot to pick the right one. 
+            In scenarios where multiple identical objects are present, implicit instructions like 'pick-and-place mayo' can often lead to confusion for the robot, lacking clear rules or manipulation policies. In this context, we leverage a Language Understanding Model (LLM) to provide precise text-based instructions for the robot to identify and handle the correct object. Specifically, an input image depicting the scene and its objects is processed by the LLM, enabling object recognition and counting. A natural language command such as 'please pick the mayo in the middle' guides the robot to select the appropriate object.
           </p>
         </div>
         <div class="content has-text-centered">
