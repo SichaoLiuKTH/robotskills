@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Transferring robot skills to enhance general-purpose object manipulation</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Transferring robot skills to enhance general-purpose object manipulation</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              Sichao Liu<sup>1,2,3</sup>,</span>
+            <span class="author-block">
+              Lihui Wang</a><sup>1</sup></span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>KTH Royal Institute of Technology,</span>
+            <span class="author-block"><sup>2</sup>University of Cambridge,</span>
+            <span class="author-block"><sup>3</sup> École Polytechnique Fédérale de Lausanne</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We introduce a pose estimate approach to establish 6D pose of the objects with accurate bounding boxs and text lables, and it simultenouly build precise and robust pose 
+            estimate of multiple objects and has the capability of real-time tracking these poses. We use a visual servosing system to allow robots to measure object's pose in real- 
+            time and dynamically plan robot arm trajectory of approching the target. The developed approach can be seamlessly connected with LLMs, where natural lanuage instructions 
+            such as 'please grasp mayo', and then the robot can understand such instructions to grasp the object.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline width="80%">
+            <source src="./static/videos/mayo1.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline width="80%">
+            <source src="./static/videos/mayo2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop playsinline width="80%">
+            <source src="./static/videos/mayo3.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline width="80%">
+            <source src="./static/videos/mayo4.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blueshirt">
+          <video poster="" id="blueshirt" autoplay controls muted loop playsinline width="80%">
+            <source src="./static/videos/mayo5.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+          <!-- Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Robot skills of object manipultion</h2>
+
+        <!-- Interpolating. -->
+        <h3 class="title is-4">6D pose supported robot grasping</h3>
+        <div class="content has-text-justified">
+          <p>
+            We established 6D pose estimate of multiple known objects in a scene with a set of input images, and text label and bounding box of the object is created. Using pre-trained model of pose estimation, RGB-D images are collected via a hand-on calibrated Azure camera and fed into build 6D pose information. As shown in the left-side,  text-based instruction such as 'pick mayo' instructes the robot to grapsing the object of 'mayo', and then 'place mayo in the box marked in blue' controls the robot to accurately place the object at the target. The right one is another example of robot skill in performing picking-and-placing operation.
+          </p>
+        </div>
+        <div class="columns is-centered">
+          <div class="column is-3 has-text-centered">
+            <video id="matting-video" autoplay controls muted loop playsinline width="300%">
+              <source src="./static/videos/mayo.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="column is-3 has-text-centered">
+            <video id="matting-video" autoplay controls muted loop playsinline width="300%">
+              <source src="./static/videos/catch.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        
+        </div>
+        <br/>
+        <!--/ Interpolating. -->
+
+        <!-- Interpolating. -->
+        <h3 class="title is-4">Robust pose tracking for object manipulation</h3>
+        <div class="content has-text-justified">
+          <p>
+            We realised robust and real-time pose tracking of the object, and it can enable the robots to handle complex maanipulation tasks, especially in a dynamic situation. 
+          </p>
+        </div>
+        <div class="columns is-centered">
+          <div class="column is-3 has-text-centered">
+            <video id="matting-video" autoplay controls muted loop playsinline width="150%">
+              <source src="./static/videos/posetrack.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="column is-3 has-text-centered">
+            <video id="matting-video" autoplay controls muted loop playsinline width="150%">
+              <source src="./static/videos/posetrack1.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="column is-3 has-text-centered">
+            <video id="matting-video" autoplay controls muted loop playsinline width="150%">
+              <source src="./static/videos/posetrack2.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <br/>
+        <!--/ Interpolating. -->
+
+        <!-- Re-rendering. -->
+        <h3 class="title is-4">LLM-driven general-purpose object manipulation</h3>
+        <div class="content has-text-justified">
+          <p>
+           When multiple same objects appear in a scene, and impilcit instructions such as pick-and-place 'mayo' often confuse the robot which one should be handled if there is no rules or manipultion policy. Here, we used a LLM model to give a specific text-based instruction to control the robot to perform the picking the correct one. Specifically, an input image of the scene is fed into the LLM to describe such a scene and objects, and the number of the object is counted. A natural language instruction 'please pick mayo in the middle' is used to instrcuted the robot to pick the right one. 
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <video id="replay-video" autoplay controls muted loop playsinline width="45%">
+            <source src="./static/videos/mayo any.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <!--/ Re-rendering. -->
+
+
+       
+
+
+      </div>
+    </div>
+    <!--/ Animation. -->
+  
+  </div>
+</section>
+
+
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{liu2024transfer,
+  author    = {Liu, Sichao and Wang, Lihui},
+  title     = {Transferring robot skills to enhance general-purpose object manipulation},
+  year={2024}
+}</code></pre>
+  </div>
+</section>
+
+
+<!-- <footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer> -->
+
+</body>
+</html>
